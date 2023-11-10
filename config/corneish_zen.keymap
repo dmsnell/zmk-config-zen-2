@@ -88,12 +88,11 @@ K12  K13  K14  K15  K16  K17    &trans  &trans  &trans  &trans  &trans  &trans \
                 )
         };
 
-        combos {
-                compatible = "zmk,combos";
-                combo_media_layer {
-                        timeout-ms = <50>;
-                        key-positions = <38 39>;
-                        bindings = <&mo _MED>;
+        conditional_layers {
+                compatible = "zmk,conditional-layers";
+                tri_layer {
+                        if-layers = <3 6>;
+                        then-layer = <7>;
                 };
         };
 
