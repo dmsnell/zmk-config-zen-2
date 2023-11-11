@@ -69,7 +69,8 @@ K12  K13  K14  K15  K16  K17    &trans  &trans  &trans  &trans  &trans  &trans \
                 #binding-cells = <2>;
                 tapping-term-ms = <150>;
                 quick-tap-ms = <200>;
-                flavor = "tap-preferred";
+                flavor = "balanced";
+                require-prior-idle-ms = <50>;
                 bindings = <&kp>, <&kp>;
              };
         };
