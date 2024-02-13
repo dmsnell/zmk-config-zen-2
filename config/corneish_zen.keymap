@@ -53,6 +53,30 @@ K12  K13  K14  K15  K16  K17    &trans  &trans  &trans  &trans  &trans  &trans \
 &trans  &trans  &trans  &trans  &trans  &trans    K33  K34  K35  K36  K37  K38 \
                         &trans  &trans  &trans    K39  K40  K41
 
+
+#define MIRYOKU_SHIFT_FUNCTION(NAME, BINDING, SHIFT_BINDING) \
+/ { \
+  behaviors { \
+    NAME: NAME { \
+      compatible = "zmk,behavior-mod-morph"; \
+      label = U_STRINGIFY(NAME); \
+      #binding-cells = <0>; \
+      bindings = <BINDING>, <SHIFT_BINDING>; \
+      mods = <(MOD_LSFT|MOD_RSFT)>; \
+    }; \
+  }; \
+};
+
+#define MIRYOKU_SHIFT_MACRO(NAME, BINDING, SHIFT_BINDING) \
+U_MACRO(u_macro_ ## NAME, wait-ms = <0>; bindings = <SHIFT_i-BINDING>;) \
+MIRYOKU_SHIFT_FUNCTION(NAME, BINDING, &u_macro_ ## NAME)
+
+MIRYOKU_SHIFT_MACRO(u_bt_sel_0, &bt BT_SEL 0, &bt BT_SEL 0 &bt BT_DISC)
+MIRYOKU_SHIFT_MACRO(u_bt_sel_1, &bt BT_SEL 1, &bt BT_SEL 1 &bt BT_DISC)
+MIRYOKU_SHIFT_MACRO(u_bt_sel_2, &bt BT_SEL 2, &bt BT_SEL 2 &bt BT_DISC)
+MIRYOKU_SHIFT_MACRO(u_bt_sel_3, &bt BT_SEL 3, &bt BT_SEL 3 &bt BT_DISC)
+MIRYOKU_SHIFT_MACRO(u_bt_sel_4, &bt BT_SEL 4, &bt BT_SEL 4 &bt BT_DISC)
+
 &caps_word { continue-list = <UNDERSCORE MINUS BACKSPACE>; };
 &lt { quick-tap-ms = <200>; };
 
@@ -192,7 +216,7 @@ K12  K13  K14  K15  K16  K17    &trans  &trans  &trans  &trans  &trans  &trans \
 
                        bindings = < LEFT_LAYER(
   &trans,         &trans,         &trans,         &trans,         &out OUT_TOG,   &bt BT_CLR,
-  &trans,         &bt BT_SEL 0,   &bt BT_SEL 1,   &bt BT_SEL 2,   &bt BT_SEL 3,   &bt BT_SEL 4,
+  &trans,         &bt BT_SEL 0,   u_bt_sel_1,     u_bt_sel_2,     u_bt_sel_3,     u_bt_sel_4,
   &trans,         &trans,         &trans,         &trans,         &trans,         &trans,
                                                   &trans,         &trans,         &trans
                         ) >;
