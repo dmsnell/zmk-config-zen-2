@@ -53,6 +53,20 @@ K12  K13  K14  K15  K16  K17    &trans  &trans  &trans  &trans  &trans  &trans \
 &trans  &trans  &trans  &trans  &trans  &trans    K33  K34  K35  K36  K37  K38 \
                         &trans  &trans  &trans    K39  K40  K41
 
+
+#define MIRYOKU_SHIFT_FUNCTION(NAME, BINDING, SHIFT_BINDING) \
+/ { \
+  behaviors { \
+    NAME: NAME { \
+      compatible = "zmk,behavior-mod-morph"; \
+      label = U_STRINGIFY(NAME); \
+      #binding-cells = <0>; \
+      bindings = <BINDING>, <SHIFT_BINDING>; \
+      mods = <(MOD_LSFT|MOD_RSFT)>; \
+    }; \
+  }; \
+};
+
 &caps_word { continue-list = <UNDERSCORE MINUS BACKSPACE>; };
 &lt { quick-tap-ms = <200>; };
 
@@ -74,6 +88,46 @@ K12  K13  K14  K15  K16  K17    &trans  &trans  &trans  &trans  &trans  &trans \
                 flavor = "balanced";
                 require-prior-idle-ms = <50>;
                 bindings = <&kp>, <&kp>;
+             };
+
+             u_bt_sel_0: u_bt_sel_0 {
+                compatible = "zmk,behavior-mod-morph";
+                label = "u_bt_sel_0";
+                #binding-cells = <0>;
+                bindings = <&bt BT_SEL 0>, <&bt BT_DISC 0>;
+                mods = <(MOD_LSFT|MOD_RSFT)>;
+             };
+
+             u_bt_sel_1: u_bt_sel_1 {
+                compatible = "zmk,behavior-mod-morph";
+                label = "u_bt_sel_1";
+                #binding-cells = <0>;
+                bindings = <&bt BT_SEL 1>, <&bt BT_DISC 1>;
+                mods = <(MOD_LSFT|MOD_RSFT)>;
+             };
+
+             u_bt_sel_2: u_bt_sel_2 {
+                compatible = "zmk,behavior-mod-morph";
+                label = "u_bt_sel_2";
+                #binding-cells = <0>;
+                bindings = <&bt BT_SEL 2>, <&bt BT_DISC 2>;
+                mods = <(MOD_LSFT|MOD_RSFT)>;
+             };
+
+             u_bt_sel_3: u_bt_sel_3 {
+                compatible = "zmk,behavior-mod-morph";
+                label = "u_bt_sel_3";
+                #binding-cells = <0>;
+                bindings = <&bt BT_SEL 3>, <&bt BT_DISC 3>;
+                mods = <(MOD_LSFT|MOD_RSFT)>;
+             };
+
+             u_bt_sel_4: u_bt_sel_4 {
+                compatible = "zmk,behavior-mod-morph";
+                label = "u_bt_sel_4";
+                #binding-cells = <0>;
+                bindings = <&bt BT_SEL 4>, <&bt BT_DISC 4>;
+                mods = <(MOD_LSFT|MOD_RSFT)>;
              };
         };
 
@@ -192,7 +246,7 @@ K12  K13  K14  K15  K16  K17    &trans  &trans  &trans  &trans  &trans  &trans \
 
                        bindings = < LEFT_LAYER(
   &trans,         &trans,         &trans,         &trans,         &out OUT_TOG,   &bt BT_CLR,
-  &trans,         &bt BT_SEL 0,   &bt BT_SEL 1,   &bt BT_SEL 2,   &bt BT_SEL 3,   &bt BT_SEL 4,
+  &trans,         &u_bt_sel_0,    &u_bt_sel_1,    &u_bt_sel_2,    &u_bt_sel_3,    &u_bt_sel_4,
   &trans,         &trans,         &trans,         &trans,         &trans,         &trans,
                                                   &trans,         &trans,         &trans
                         ) >;
