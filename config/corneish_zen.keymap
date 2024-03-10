@@ -145,7 +145,7 @@ K12  K13  K14  K15  K16  K17    &trans  &trans  &trans  &trans  &trans  &trans \
              ansi_reset: ansi_reset {
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
-                bindings = <&kp Z &kp M &kp K>;
+                bindings = <&kp BSLH &kp E &kp LBKT &kp M>;
              };
         };
 
@@ -316,10 +316,10 @@ K12  K13  K14  K15  K16  K17    &trans  &trans  &trans  &trans  &trans  &trans \
   &trans,         &trans,         &trans,         &trans,         &trans,         &trans,
                                                   &trans,         &trans,         &trans,
 
-  &trans,         &ansi_color N7, &trans,         &trans,         &trans,         &trans,
+  &trans,         &ansi_color N7, &ansi_reset,    &ansi_color N9, &trans,         &trans,
   &trans,         &ansi_color N4, &ansi_color N5, &ansi_color N6, &trans,         &trans,
   &trans,         &ansi_color N1, &ansi_color N2, &ansi_color N3, &trans,         &trans,
-  &trans,         &trans,         &trans
+  &trans,       &trans,         &trans
                         ) >;
                 };
 
