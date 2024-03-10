@@ -69,20 +69,6 @@ K12  K13  K14  K15  K16  K17    &trans  &trans  &trans  &trans  &trans  &trans \
   }; \
 };
 
-#define ANSI_COLOR(NAME, COLOR, SHIFTED) \
-/ { \
-  behaviors { \
-    NAME: NAME { \
-      compatible = "zmk,behavior-mod-morph"; \
-      label = U_STRINGIFY(NAME); \
-      #binding-cells = <0>; \
-      bindings
-        = <&kp BSLH &kp e &kp LBKT COLOR &kp M> \
-        , <&kp BSLH &kp e &kp LBKT SHIFTED &kp M>; \
-    }; \
-  }; \
-};
-
 &caps_word { continue-list = <UNDERSCORE MINUS BACKSPACE>; };
 &lt { quick-tap-ms = <200>; };
 
@@ -145,6 +131,20 @@ K12  K13  K14  K15  K16  K17    &trans  &trans  &trans  &trans  &trans  &trans \
                 bindings = <&bt BT_SEL 4>, <&bt BT_DISC 4>;
                 mods = <(MOD_LSFT|MOD_RSFT)>;
              };
+
+             ansi_color: ansi_color {
+                compatible = "zmk,behavior-macro-one-param";
+                label = "ANSI_color";
+                #binding-cells = <1>;
+                bindings
+                        = <&kp BSLH>
+                        , <&kp E>
+                        , <&kp LBKT>
+                        , <&kp N3>
+                        , <&macro_param_1to1>
+                        , <&kp MACRO_PLACEHOLDER>
+                        , <&kp M>;
+             }
         };
 
         combos {
