@@ -12,6 +12,8 @@
 #define _CTL  6
 #define _TNM  7
 #define _MED  8
+#define _ANSI 9
+#define _SNSI 10
 
 
 #define SPLIT_LAYOUT( \
@@ -160,6 +162,11 @@ K12  K13  K14  K15  K16  K17    &trans  &trans  &trans  &trans  &trans  &trans \
                         if-layers = <_NAV _TNM>;
                         then-layer = <_MED>;
                 };
+
+                ansi_layer {
+                        if-layers = <_NUM _SYM>;
+                        then-layer = <_ANSI>;
+                }
         };
 
         keymap {
@@ -283,5 +290,53 @@ K12  K13  K14  K15  K16  K17    &trans  &trans  &trans  &trans  &trans  &trans \
   &trans,         &trans,         &trans
                         ) >;
                 };
+
+                media_layer {
+                       label = "ANSI";
+
+                       bindings = < SPLIT_LAYOUT(
+  &trans,         &trans,         &trans,         &trans,         &trans,         &trans,
+  &trans,         &trans,         &trans,         &lt _SNSI LSHFT,&trans,         &trans,
+  &trans,         &trans,         &trans,         &trans,         &trans,         &trans,
+                                                  &trans,         &trans,         &trans,
+
+  &trans,         &trans,         &trans,         &trans,         &trans,         &trans,
+  &trans,         &trans,         &trans,         &trans,         &trans,         &trans,
+  &trans,         &trans,         &trans,         &trans,         &trans,         &trans,
+  &trans,         &trans,         &trans
+                        ) >;
+                };
+
+                media_layer {
+                       label = "S_ANSI";
+
+                       bindings = < SPLIT_LAYOUT(
+  &trans,         &trans,         &trans,         &trans,         &trans,         &trans,
+  &trans,         &trans,         &trans,         &trans,         &trans,         &trans,
+  &trans,         &trans,         &trans,         &trans,         &trans,         &trans,
+                                                  &trans,         &trans,         &trans,
+
+  &trans,         &trans,         &trans,         &trans,         &trans,         &trans,
+  &trans,         &trans,         &trans,         &trans,         &trans,         &trans,
+  &trans,         &trans,         &trans,         &trans,         &trans,         &trans,
+  &trans,         &trans,         &trans
+                        ) >;
+                };
+
+//                 media_layer {
+//                        label = "EMPTY_SPLIT";
+
+//                        bindings = < SPLIT_LAYOUT(
+//   &trans,         &trans,         &trans,         &trans,         &trans,         &trans,
+//   &trans,         &trans,         &trans,         &trans,         &trans,         &trans,
+//   &trans,         &trans,         &trans,         &trans,         &trans,         &trans,
+//                                                   &trans,         &trans,         &trans,
+
+//   &trans,         &trans,         &trans,         &trans,         &trans,         &trans,
+//   &trans,         &trans,         &trans,         &trans,         &trans,         &trans,
+//   &trans,         &trans,         &trans,         &trans,         &trans,         &trans,
+//   &trans,         &trans,         &trans
+//                         ) >;
+//                 };
         };
 };
