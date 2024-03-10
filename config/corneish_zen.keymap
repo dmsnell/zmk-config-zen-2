@@ -141,6 +141,12 @@ K12  K13  K14  K15  K16  K17    &trans  &trans  &trans  &trans  &trans  &trans \
                         , <&kp MACRO_PLACEHOLDER>
                         , <&kp M>;
              };
+
+             my_zero_param_macro: my_zero_param_macro {
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings = <&kp Z &kp M &kp K>;
+             };
         };
 
         combos {
@@ -164,12 +170,6 @@ K12  K13  K14  K15  K16  K17    &trans  &trans  &trans  &trans  &trans  &trans \
                                 , <&macro_release &kp LCTRL>
                                 ;
                 )
-
-                clr_rst: clr_rst {
-                        compatible: "zmk,behavior-macro";
-                        #binding-cells = <0>;
-                        bindings = <&kp BLSH &kp E &kp LBKT &kp M>;
-                };
         };
 
         conditional_layers {
