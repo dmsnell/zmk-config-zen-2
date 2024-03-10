@@ -291,7 +291,7 @@ K12  K13  K14  K15  K16  K17    &trans  &trans  &trans  &trans  &trans  &trans \
                         ) >;
                 };
 
-                media_layer {
+                ansi_layer {
                        label = "ANSI";
 
                        bindings = < SPLIT_LAYOUT(
@@ -307,7 +307,7 @@ K12  K13  K14  K15  K16  K17    &trans  &trans  &trans  &trans  &trans  &trans \
                         ) >;
                 };
 
-                media_layer {
+                s_ansi_layer {
                        label = "S_ANSI";
 
                        bindings = < SPLIT_LAYOUT(
