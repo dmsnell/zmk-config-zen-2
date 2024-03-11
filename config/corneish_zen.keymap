@@ -142,6 +142,22 @@ K12  K13  K14  K15  K16  K17    &trans  &trans  &trans  &trans  &trans  &trans \
                         , <&kp M>;
              };
 
+             ansi_fg_l: ansi_fg_l {
+                compatible = "zmk,behavior-macro-one-param";
+                #binding-cells = <1>;
+                bindings
+                        = <&kp BSLH &kp E &kp LBKT &kp N9>
+                        , <&macro_param_1to1>
+                        , <&kp MACRO_PLACEHOLDER>
+                        , <&kp M>;
+             };
+
+             key_nl: key_nl {
+                compatible = "zmk,behavior-macro";
+                #binding-cells = <0>;
+                bindings = <&kp BSLH &kp N>;
+             };
+
              ansi_reset: ansi_reset {
                 compatible = "zmk,behavior-macro";
                 #binding-cells = <0>;
@@ -316,9 +332,9 @@ K12  K13  K14  K15  K16  K17    &trans  &trans  &trans  &trans  &trans  &trans \
   &trans,         &trans,         &trans,         &trans,         &trans,         &trans,
                                                   &trans,         &trans,         &trans,
 
-  &trans,         &trans,         &ansi_reset,    &ansi_color N9, &trans,         &trans,
+  &ansi_fg_l N0,  &trans,         &ansi_reset,    &ansi_color N9, &trans,         &trans,
   &trans,         &ansi_color N4, &ansi_color N5, &ansi_color N6, &trans,         &trans,
-  &trans,         &ansi_color N1, &ansi_color N2, &ansi_color N3, &trans,         &trans,
+  &key_nl,        &ansi_color N1, &ansi_color N2, &ansi_color N3, &trans,         &trans,
   &trans,         &trans,         &trans
                         ) >;
                 };
