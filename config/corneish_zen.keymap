@@ -13,7 +13,7 @@
 #define _TNM  7
 #define _MED  8
 #define _ANSI 9
-#define _SNSI 10
+#define _NOMD 10
 
 
 #define SPLIT_LAYOUT( \
@@ -172,6 +172,13 @@ K12  K13  K14  K15  K16  K17    &trans  &trans  &trans  &trans  &trans  &trans \
                         key-positions = <24 35>;
                         bindings = <&caps_word>;
                 };
+
+                combo_toggle_no_home_row_mods {
+                        timeout-ms = <200>;
+                        key-positions = <0 26>;
+                        bindings = <&tog _NOMOD>;
+                        require-prior-idle-ms = 200;
+                };
         };
 
         macros {
@@ -218,7 +225,7 @@ K12  K13  K14  K15  K16  K17    &trans  &trans  &trans  &trans  &trans  &trans \
   &kp N,          &kp M,          &kp COMMA,      &kp DOT,        &kp FSLH,       &kp RSHFT,
   &lt _TNM BSPC,  &lt _SYM SPACE, &lt _CTL RET
                         ) >;
-                }; 
+                };
 
                 nomt_layer {
                         label = "NOMT";
@@ -234,7 +241,7 @@ K12  K13  K14  K15  K16  K17    &trans  &trans  &trans  &trans  &trans  &trans \
   &kp N,          &kp M,          &kp COMMA,      &kp DOT,        &kp FSLH,       &kp RSHFT,
   &lt _TNM BSPC,  &lt _SYM SPACE, &lt _CTL RET
                         ) >;
-                }; 
+                };
 
                 symbol_layer {
                        label = "SYMBOL";
@@ -306,7 +313,7 @@ K12  K13  K14  K15  K16  K17    &trans  &trans  &trans  &trans  &trans  &trans \
   &trans,         &trans,         &trans
                         ) >;
                 };
-                 
+
                 media_layer {
                        label = "MEDIA";
 
@@ -328,7 +335,7 @@ K12  K13  K14  K15  K16  K17    &trans  &trans  &trans  &trans  &trans  &trans \
 
                        bindings = < SPLIT_LAYOUT(
   &trans,         &trans,         &trans,         &trans,         &trans,         &trans,
-  &trans,         &trans,         &trans,         &lt _SNSI LSHFT,&trans,         &trans,
+  &trans,         &trans,         &trans,         &trans,         &trans,         &trans,
   &trans,         &trans,         &trans,         &trans,         &trans,         &trans,
                                                   &trans,         &trans,         &trans,
 
@@ -339,20 +346,20 @@ K12  K13  K14  K15  K16  K17    &trans  &trans  &trans  &trans  &trans  &trans \
                         ) >;
                 };
 
-                s_ansi_layer {
-                       label = "S_ANSI";
+                non_homerow_mod_layer {
+                       label = "NOMOD";
 
                        bindings = < SPLIT_LAYOUT(
-  &trans,         &trans,         &trans,         &trans,         &trans,         &trans,
-  &trans,         &trans,         &trans,         &trans,         &trans,         &trans,
-  &trans,         &trans,         &trans,         &trans,         &trans,         &trans,
-                                                  &trans,         &trans,         &trans,
+ &kp ESC,        &kp Q,          &kp W,          &kp E,          &kp R,          &kp T,
+ &kp TAB,        &kp A,          &kp S,          &kp D,          &kp F,          &kp G,
+ &kp LSHFT,      &kp Z,          &kp X,          &kp C,          &kp V,          &kp B,
+                                                 &kp RET,        &kp SPACE,      &kp LCTRL,
 
-  &trans,         &trans,         &trans,         &trans,         &trans,         &trans,
-  &trans,         &trans,         &trans,         &trans,         &trans,         &trans,
-  &trans,         &trans,         &trans,         &trans,         &trans,         &trans,
-  &trans,         &trans,         &trans
-                        ) >;
+ &kp Y,          &kp U,          &kp I,          &kp O,          &kp P,          &kp BSPC,
+ &kp H,          &kp J,          &kp K,          &kp L,          &kp SEMI,       &kp SQT,
+ &kp N,          &kp M,          &kp COMMA,      &kp DOT,        &kp FSLH,       &kp RSHFT,
+ &kp RCTRL,      &kp LGUI,       &kp LALT
+                       ) >;
                 };
 
 //                 media_layer {
