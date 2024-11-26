@@ -177,7 +177,6 @@ K12  K13  K14  K15  K16  K17    &trans  &trans  &trans  &trans  &trans  &trans \
                         timeout-ms = <200>;
                         key-positions = <0 26>;
                         bindings = <&tog _NOMD>;
-                        require-prior-idle-ms = 200;
                 };
         };
 
