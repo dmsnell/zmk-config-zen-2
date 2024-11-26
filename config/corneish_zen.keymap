@@ -366,7 +366,7 @@ K12  K13  K14  K15  K16  K17    &trans  &trans  &trans  &trans  &trans  &trans \
                        label = "DOMON";
 
                        bindings = < SPLIT_LAYOUT(
- &kp BSP,        &kp P,          &kp O,          &kp I,          &kp U,          &kp Y,
+ &kp BSPC,       &kp P,          &kp O,          &kp I,          &kp U,          &kp Y,
  &kp TAB,        &kp SEMI,       &kp L,          &kp K,          &kp J,          &kp H,
  &kp LSHFT,      &kp FSLH,       &kp DOT,        &kp COMMA,      &kp M,          &kp N,
                                                  &kp RET,        &kp SPACE,      &kp LCTRL,
