@@ -14,6 +14,7 @@
 #define _MED  8
 #define _ANSI 9
 #define _NOMD 10
+#define _DMON 10
 
 
 #define SPLIT_LAYOUT( \
@@ -352,11 +353,27 @@ K12  K13  K14  K15  K16  K17    &trans  &trans  &trans  &trans  &trans  &trans \
  &kp ESC,        &kp Q,          &kp W,          &kp E,          &kp R,          &kp T,
  &kp TAB,        &kp A,          &kp S,          &kp D,          &kp F,          &kp G,
  &kp LSHFT,      &kp Z,          &kp X,          &kp C,          &kp V,          &kp B,
-                                                 &kp RET,        &kp SPACE,      &kp LCTRL,
+                                                 &kp RET,        &kp SPACE,      &lt _DMON LCTRL,
 
  &kp Y,          &kp U,          &kp I,          &kp O,          &kp P,          &kp BSPC,
  &kp H,          &kp J,          &kp K,          &kp L,          &kp SEMI,       &kp SQT,
  &kp N,          &kp M,          &kp COMMA,      &kp DOT,        &kp FSLH,       &kp RSHFT,
+ &kp RCTRL,      &kp LGUI,       &kp LALT
+                       ) >;
+                };
+
+                non_homerow_mod_reverse_layer {
+                       label = "DOMON";
+
+                       bindings = < SPLIT_LAYOUT(
+ &kp BSP,        &kp P,          &kp O,          &kp I,          &kp U,          &kp Y,
+ &kp TAB,        &kp SEMI,       &kp L,          &kp K,          &kp J,          &kp H,
+ &kp LSHFT,      &kp FSLH,       &kp DOT,        &kp COMMA,      &kp M,          &kp N,
+                                                 &kp RET,        &kp SPACE,      &kp LCTRL,
+
+ &kp T,          &kp R,          &kp E,          &kp W,          &kp Q,          &kp BSPC,
+ &kp G,          &kp F,          &kp D,          &kp S,          &kp A,          &kp SQT,
+ &kp B,          &kp V,          &kp C,          &kp X,          &kp Z,          &kp LSHFT,
  &kp RCTRL,      &kp LGUI,       &kp LALT
                        ) >;
                 };
